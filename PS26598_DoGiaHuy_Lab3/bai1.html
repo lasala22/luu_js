@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đỗ Gia Huy-PS26598</title>
+    <style>
+        .container{
+            width: 500px;
+            margin: auto;
+            border: 1px dotted navy;
+            border-radius: 5px;
+            text-align: center;
+            padding: 20px;
+            background-color: blanchedalmond;
+        }
+        .container p{
+            font-size: 20px;
+            color: rebeccapurple;
+        }
+    </style>
+    <script>
+        do {
+            var so1 = prompt("Nhập số 1: ");
+            so1 = parseFloat(so1);
+            if(isNaN(so1)==true){
+                alert("Nhập sai, nhập số á!")
+            }else{
+                break;
+            }
+        } while (true);
+        
+        do {
+            var so2 = prompt("Nhập số 2: ");
+            so2 = parseFloat(so2);
+            if(isNaN(so2)==true){
+                alert("Nhập sai, nhập số á!")
+            }else{
+                break;
+            }
+        } while (true);
+        var pheptinh = prompt("Nhập phép tính: ");
+        
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <script>
+            switch (pheptinh) {
+                case '+':
+                    var kq = so1 + so2;
+                    document.write(`<p>Kết quả ${so1} + ${so2} là: ` + kq.toFixed(3) + "</p>");
+                    break;
+                case '-':
+                    var kq = so1 - so2;
+                    document.write(`<p>Kết quả ${so1} - ${so2} là: ` + kq.toFixed(3) + "</p>");
+                    break; 
+                case '*':
+                    var kq = so1 * so2;
+                    document.write(`<p>Kết quả ${so1} * ${so2} là: ` + kq.toFixed(3) + "</p>");
+                    break;
+                case '/':
+                    var kq = so1 / so2;
+                    document.write(`<p>Kết quả ${so1} / ${so2} là: ` + kq.toFixed(3) + "</p>");
+                    break;
+                
+                default:
+                    document.write(pheptinh + " Không phải là phép tính hợp lệ");
+            }
+        </script>
+    </div>
+</body>
+
+</html>

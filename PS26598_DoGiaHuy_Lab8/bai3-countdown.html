@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đỗ Gia Huy - PS26598</title>
+    <style>
+        body{
+            background: url(img/pexels-suvan-chowdhury-666988.jpg);
+            background-size: cover;
+        }
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        #countdown{
+            width: 500px;
+            margin:50px auto;
+            text-align: center;
+            font-size: 20px;   
+        }
+        h2{
+            color: red;
+            text-align: center;
+            margin-top: 100px;
+        }
+        span{
+            background-color: rgb(220, 129, 164);
+            color: white;
+            display: inline-block;
+            border: 2px solid navy;
+            padding: 20px;
+            
+        }
+        b{
+            
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>ĐẾM NGƯỢC THỜI GIAN TẾT NGUYÊN ĐÁN 2023</h2>
+    <div id="countdown">
+        
+    </div>
+</body>
+</html>
+<script>
+    setInterval('countdown()',1000);
+    function countdown(){
+        let ed = '2023-01-22';
+        let endDate = new Date(ed);
+        let now = new Date();
+        let miligiay = (endDate - now); //số miligiaya giữa now và endDate
+        let sogiay = Math.floor((miligiay/1000) % 60);
+        let sophut = Math.floor((miligiay/1000/60) % 60);
+        let sogio = Math.floor((miligiay/1000/60/60) % 24);
+        let songay = Math.floor(miligiay/1000/60/60/24);
+        let str = `<span><b>${songay}</b> ngày</span><span><b>${sogio}</b> giờ</span><span><b>${sophut}</b> phút</span><span><b>${sogiay}</b> ngày</span>`;
+        document.getElementById('countdown').innerHTML = str;
+    }
+</script>

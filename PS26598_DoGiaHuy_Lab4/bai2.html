@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đỗ Gia Huy-PS26598</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #listsach{
+            margin: auto;
+            width: 700px;
+        }
+        #listsach .rows{
+           
+            display: grid;
+            grid-template-columns: 50px 300px 300px;
+        
+
+         
+        }
+        #listsach .rows span{
+        border: 1px solid navy;
+        padding: 20px;
+        text-align: center;
+        }
+    </style>
+    <script>
+        var arr = [
+            sp1 = { tensp: "Nói với tuổi 20", gia: 35000 },
+            sp2 = { tensp: "Mùi hương trầm", gia: 120000 },
+            sp1 = { tensp: "Bích câu kỳ ngộ", gia: 300000 },
+        ];
+    </script>
+</head>
+
+<body>
+    <div id="listsach">
+        <script>
+            for (i = 0; i < arr.length; i++) {
+                document.write(`
+                <div class="rows">
+                    <span>${i + 1}</span>
+                    <span>${arr[i].tensp}</span>
+                    <span>${arr[i].gia}</span>
+            </div>`);
+            }
+        </script>
+    </div>
+</body>
+
+</html>

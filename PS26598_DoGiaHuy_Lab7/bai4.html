@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đỗ Gia Huy - PS26598</title>
+    <style>
+        .container{
+            border: 2px solid navy;
+            margin: 30px auto;
+            width: 500px;
+            text-align: center;
+            background-color: rgb(238, 226, 203);
+        }
+        h2{
+            color: red;
+        }
+        .stars {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .star {
+            font-size: 2em;
+            color: #333;
+            display: inline-block;
+        }
+
+        .orange {
+            color: orange
+        }
+
+        .output {
+            background-color: #ddd;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: blue;
+            font-size: 20px;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="container">
+        <h2>Star Rates</h2>
+        <ul class="stars">
+            <li class="star">&#10029; </li>
+            <li class="star">&#10029; </li>
+            <li class="star">&#10029; </li>
+            <li class="star">&#10029; </li>
+            <li class="star">&#10029; </li>
+        </ul>
+        <div class="output"></div>
+    </div>
+    
+
+</body>
+
+</html>
+<script>
+    var output = document.querySelector(".output");
+    const stars = document.querySelectorAll(".star");
+    stars.forEach(
+        (star, index) => {
+            star.starvalue = index + 1;
+            star.addEventListener('click', starRate);
+        }
+    )
+    function starRate(e) {
+        output.innerHTML = `Bạn đánh giá ${e.target.starvalue} sao`;
+        stars.forEach(
+            (star, index) => {
+                if (index < e.target.starvalue) star.classList.add('orange');
+                else star.classList.remove('orange');
+            }
+        )
+    }
+</script>

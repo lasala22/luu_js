@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đỗ Gia Huy - PS26598</title>
+    <style>
+        body{
+            background: url(img/pexels-dana-tentis-370799.jpg);
+        }
+        .container{
+            width: 800px;
+            margin: auto;
+            background-color: lightgrey;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        img{
+            
+            width: 100%;
+            height: 500px;
+        }
+        button{
+            padding: 10px;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+    <script>
+        var images = [];
+        var index = 0;
+        var sohinh = 5;
+        for(var i=0; i<sohinh;i++){
+            images[i] = new Image();
+            images[i].src = "img/"+i+'.jpg';
+        }
+        function first(){
+            index = 0;
+            var anh = document.getElementById('anh');
+            anh.src = images[index].src;
+            
+        }
+        function last(){
+            index = images.length -1
+            var anh = document.getElementById('anh');
+            anh.src = images[index].src;
+            
+        }
+        function next(){
+            index++;
+            if(index >= images.length) index=0;
+            var anh = document.getElementById('anh');
+            anh.src = images[index].src;
+        }
+        function prev(){
+            index--;
+            if(index < 0) index= images.length -1;
+            var anh = document.getElementById('anh');
+            anh.src = images[index].src;
+        }
+    
+    </script>
+</head>
+<body>
+    <h2>THẾ GIỚI ĐỘNG VẬT ĐÁNG YÊU</h2>
+    <div class="container">
+        <img src="img/0.jpg" alt="" id="anh">
+        <div class="=btn_container">
+            <button onclick="first()"> << </button>
+            <button onclick="prev()"> < </button>
+            <button onclick="next()"> > </button>
+            <button onclick="last()"> >> </button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đỗ Gia Huy-PS26598</title>
+    <style>
+        button{
+            width: 200px;
+            height: 50px;
+            background-color: bisque;
+            font-size: 17px;
+        }
+    </style>
+    <script>
+        var w
+        function moWin(){
+            w = window.open("thongtin.html","tt","width=400,height=200,top=50,left=600")
+            w.focus();
+        }
+        function dongWin(){
+            w.close();
+        }
+        function dichuyenMotChut(){
+            w.moveBy(5,10);
+            w.focus();
+        }
+        function dichuyenDen(){
+            var x = parseFloat(prompt("Nhập X"));
+            var y = parseFloat(prompt("Nhập Y")) ;
+            w.moveTo(x,y);
+            w.focus();
+        }
+        function inAn(){
+            w.print();
+            w.focus();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Thực hành với đối tượng Window</h1>
+        <p><button onclick="moWin()">Mở win</button></p>
+        <p><button onclick="inAn()">In Ấn</button></p>
+        <p><button onclick="dichuyenMotChut()">Di chuyển 1 chút</button></p>
+        <p><button onclick="dichuyenDen()">Di chuyển tới điểm</button></p>
+        <p><button onclick="dongWin()">Đóng win</button></p>
+    </div>
+</body>
+</html>

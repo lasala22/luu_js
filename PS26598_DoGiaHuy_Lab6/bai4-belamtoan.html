@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đỗ Gia Huy - PS26598</title>
+    <style>
+        body{
+            background: url(img/97be845fe67153bbcc98071abc8e46ee.jpg);
+        }
+        h1{
+            text-align: center;
+            color: whitesmoke;
+        }
+        form{
+            width: 300px;
+            margin: 10px auto;
+            background-color: bisque;
+            padding: 30px;
+            border-radius: 10px;
+
+        }
+        label{
+            display: inline-block;
+            width: 100px;
+            color: navy;
+        }
+        input{
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function danhgiaKQ(){
+            var x = document.frm1.x.value;
+            var y = document.frm1.y.value;
+            var traloi = document.frm1.traloi.value;
+            var dapan = parseFloat(x) + parseFloat(y);
+            if (traloi == dapan){
+                document.getElementById('danhgia').innerText="Bé giỏi quá";
+                document.getElementById('danhgia').style.color="Blue";
+            } else {
+                document.getElementById('danhgia').innerText="Sai rồi bé";
+                document.getElementById('danhgia').style.color="Red";
+            }
+        }
+        function choSo(){
+            document.getElementById('x').value = Math.floor(Math.random() * 11);
+            document.getElementById('y').value = Math.floor(Math.random() * 11);
+            document.getElementById('danhgia').innerText = "";
+        }
+        function lamtrong(){
+            document.getElementById('danhgia').innerText='';
+        }
+    </script>
+</head>
+
+<body>
+    <h1>BÉ LÀM TOÁN</h1>
+    <form action="" id="trochoi" name="frm1">
+        <p> 
+            <label for="">Số A</label>
+            <input id="x" placeholder="Nhập từ 1 đến 10">
+        </p>
+        <p> 
+            <label for="">Số B</label>
+            <input id="y" placeholder="Nhập từ 1 đến 10">
+        </p>
+        <p> 
+            <label for="">Trả lời</label>
+            <input id="traloi" placeholder="Bé nhập câu trả lời nhé" onkeyup="lamtrong()">
+        </p>
+        <p> 
+            <label for="">Kết quả</label>
+            <span id="danhgia" ></span>
+        </p>
+        <p> 
+            <label for=""></label>
+            <button type="button" id="kiemtra" onclick="danhgiaKQ()">Kiểm tra</button>
+            <button type="button" id="choso" onclick="choSo()">Cho Số</button>
+        </p>
+    </form>
+</body>
+
+</html>

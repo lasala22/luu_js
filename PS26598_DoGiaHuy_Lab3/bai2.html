@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đỗ Gia Huy-PS26598</title>
+    <style>
+        .container{
+            width: 800px;
+            margin: auto;
+            border: 1px dotted navy;
+            border-radius: 5px;
+            text-align: center;
+            padding: 20px;
+            background-color: blanchedalmond;
+        }
+        .container h3{
+            color: red;
+        }
+        .container span{
+            background-color: aqua;
+            color: blueviolet;
+            text-align: center;
+    
+            border-radius: 55%;
+            margin:0 10px;
+            display: inline-block;
+            border: 1px solid yellow;
+            width: 50px;
+            height: 41px;
+            padding-top: 23px;
+        }
+    </style>
+    <script>
+        
+        var f0 = parseFloat(prompt("Nhập số thứ nhất: "));
+        var f1 = parseFloat(prompt("Nhập số thứ hai: "));
+        do {
+            var n = parseInt(prompt("Nhập số lần lặp trong khoảng 5 đến 30"));
+            if(n>=5&&n<=30){
+                break;
+            }else{
+                alert("Nhập sai, nhập lại!");
+            }
+        } while (true);
+        if(isNaN(f0)==true){
+            f0 = 1;
+        }
+        if(isNaN(f1)==true){
+            f1 = 2;
+        }
+        
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h3>DÃY FIBONACCI</h3>
+        <script>
+            for (var i = 0; i < n; i++) {
+                var f = f0 + f1;
+                f0 = f1;
+                f1 = f;
+                document.write("<span>" + f + "</span>");
+            }
+        </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đỗ Gia Huy - PS26598</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 20px auto;
+            width: 700px;
+            border: 1px solid navy;
+            border-radius: 10px;
+        }
+
+        .container h3 {
+            text-align: center;
+            padding: 20px;
+            font-size: 25px;
+            color: blueviolet;
+
+        }
+
+        .container form {
+            padding: 20px;
+        }
+
+        .container form p {
+            display: inline-block;
+            color: navy;
+            padding: 5px 0;
+            font-size: 18px;
+            font-weight: bolder;
+            margin-top: 10px;
+        }
+
+        .container form input {
+            width: 100%;
+            height: 40px;
+            background-color: wheat;
+
+        }
+
+        ::placeholder {
+            color: fuchsia;
+        }
+
+        .container form span {
+            color: red;
+            font-style: italic;
+            font-size: 17px;
+
+        }
+
+        .container .phuongthuc input {
+            /* display: inline-block; */
+            width: auto;
+            height: auto;
+            margin-right: 5px;
+        }
+
+        form .chonTinh {
+            width: 100%;
+            height: 40px;
+            background-color: wheat;
+        }
+
+        form button {
+            font-weight: bold;
+            color: yellow;
+            background-color: forestgreen;
+            margin-top: 10px;
+            width: 150px;
+            height: 60px;
+        }
+    </style>
+    <script>
+        function kiemtra() {
+            var kt = true;
+            var ht = document.frm1.hoten.value;
+            var mail = document.frm1.email.value;
+            var sdt = document.frm1.sdt.value;
+            var tinh = document.frm1.tinh.value;
+            //kiểm lỗi họ tên
+            document.getElementById('loi_ht').innerHTML = '';
+
+            if (ht.length < 6 || ht.length > 30) {
+                document.getElementById('loi_ht').innerText = "Nhập họ tên từ 6 đến 30 ký tự";
+                kt = false;
+            }
+            //kiểm lỗi email
+            document.getElementById('loi_email').innerHTML = '';
+
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (!mailformat.test(mail)) {
+                document.getElementById('loi_email').innerText = "Nhập đúng định dạng email";
+                kt = false;
+            }
+
+            //kiểm lỗi sdt
+            document.getElementById('loi_sdt').innerHTML = '';
+            if (sdt.length != 10) {
+                document.getElementById('loi_sdt').innerText = "Nhập số điện thoại 10 số";
+                kt = false;
+            }
+            if (isNaN(sdt) == true) {
+                document.getElementById('loi_sdt').innerText = "Nhập số điện thoại là số";
+                kt = false;
+            }
+            //kiểm lỗi thanh toán
+            document.getElementById('loi_pay').innerHTML = '';
+            var pay = document.getElementsByName('pay_method');
+            if (pay[0].checked == false && pay[1].checked == false && pay[2].checked == false) {
+                document.getElementById('loi_pay').innerText = "Chọn 1 phương thức thanh toán";
+                kt = false;
+            }
+            //kiểm lỗi chọn tỉnh
+            document.getElementById('loi_tinh').innerHTML = '';
+            console.log(tinh);
+            if (tinh == 0) {
+                document.getElementById('loi_tinh').innerText = "Chọn tỉnh đi bạn nhé!";
+                kt = false;
+            }
+
+            return kt;
+        }
+
+        function bienmat() {
+            document.getElementById('loi_ht').innerHTML = '';
+            document.getElementById('loi_email').innerHTML = '';
+            document.getElementById('loi_sdt').innerHTML = '';
+            document.getElementById('loi_pay').innerHTML = '';
+            document.getElementById('loi_tinh').innerHTML = '';
+        }
+
+        function matchu() {
+            setTimeout("bienmat()", 5000);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h3>THANH TOÁN MUA HÀNG</h3>
+        <form action="" name="frm1" onsubmit="return kiemtra()">
+            <div class="name">
+                <p>Họ tên</p>
+                <input type="text" placeholder="Họ tên người nhận" name="hoten"><br>
+                <span id="loi_ht"></span>
+            </div>
+            <div class="email">
+                <p>Email</p>
+                <input type="email" placeholder="Email người nhận" name="email"><br>
+                <span id="loi_email"></span>
+            </div>
+            <div class="phone">
+                <p>Số điện thoại</p>
+                <input type="text" placeholder="Số điện thoại người nhận" name="sdt"><br>
+                <span id="loi_sdt"></span>
+            </div>
+            <div class="phuongthuc">
+                <p>Phương thức thanh toán</p><br>
+                <input type="radio" name="pay_method"><label for="">Chuyển khoản</label>
+                <input type="radio" name="pay_method"><label for="">Thẻ ATM nội địa</label>
+                <input type="radio" name="pay_method"><label for="">Khi nhận hàng</label>
+                <br>
+                <span id="loi_pay"></span>
+            </div>
+
+            <div class="tinhThanh">
+                <p>Chọn tỉnh</p>
+
+                <select class="chonTinh" name="tinh">
+                    <option value="0">Chọn tỉnh</option>
+                    <option value="An Giang">An Giang
+                    <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu
+                    <option value="Bắc Giang">Bắc Giang
+                    <option value="Bắc Kạn">Bắc Kạn
+                    <option value="Bạc Liêu">Bạc Liêu
+                    <option value="Bắc Ninh">Bắc Ninh
+                    <option value="Bến Tre">Bến Tre
+                    <option value="Bình Định">Bình Định
+                    <option value="Bình Dương">Bình Dương
+                    <option value="Bình Phước">Bình Phước
+                    <option value="Bình Thuận">Bình Thuận
+                    <option value="Bình Thuận">Bình Thuận
+                    <option value="Cà Mau">Cà Mau
+                    <option value="Cao Bằng">Cao Bằng
+                    <option value="Đắk Lắk">Đắk Lắk
+                    <option value="Đắk Nông">Đắk Nông
+                    <option value="Điện Biên">Điện Biên
+                    <option value="Đồng Nai">Đồng Nai
+                    <option value="Đồng Tháp">Đồng Tháp
+                    <option value="Đồng Tháp">Đồng Tháp
+                    <option value="Gia Lai">Gia Lai
+                    <option value="Hà Giang">Hà Giang
+                    <option value="Hà Nam">Hà Nam
+                    <option value="Hà Tĩnh">Hà Tĩnh
+                    <option value="Hải Dương">Hải Dương
+                    <option value="Hậu Giang">Hậu Giang
+                    <option value="Hòa Bình">Hòa Bình
+                    <option value="Hưng Yên">Hưng Yên
+                    <option value="Khánh Hòa">Khánh Hòa
+                    <option value="Kiên Giang">Kiên Giang
+                    <option value="Kon Tum">Kon Tum
+                    <option value="Lai Châu">Lai Châu
+                    <option value="Lâm Đồng">Lâm Đồng
+                    <option value="Lạng Sơn">Lạng Sơn
+                    <option value="Lào Cai">Lào Cai
+                    <option value="Long An">Long An
+                    <option value="Nam Định">Nam Định
+                    <option value="Nghệ An">Nghệ An
+                    <option value="Ninh Bình">Ninh Bình
+                    <option value="Ninh Thuận">Ninh Thuận
+                    <option value="Phú Thọ">Phú Thọ
+                    <option value="Quảng Bình">Quảng Bình
+                    <option value="Quảng Bình">Quảng Bình
+                    <option value="Quảng Ngãi">Quảng Ngãi
+                    <option value="Quảng Ninh">Quảng Ninh
+                    <option value="Quảng Trị">Quảng Trị
+                    <option value="Sóc Trăng">Sóc Trăng
+                    <option value="Sơn La">Sơn La
+                    <option value="Tây Ninh">Tây Ninh
+                    <option value="Thái Bình">Thái Bình
+                    <option value="Thái Nguyên">Thái Nguyên
+                    <option value="Thanh Hóa">Thanh Hóa
+                    <option value="Thừa Thiên Huế">Thừa Thiên Huế
+                    <option value="Tiền Giang">Tiền Giang
+                    <option value="Trà Vinh">Trà Vinh
+                    <option value="Tuyên Quang">Tuyên Quang
+                    <option value="Vĩnh Long">Vĩnh Long
+                    <option value="Vĩnh Phúc">Vĩnh Phúc
+                    <option value="Yên Bái">Yên Bái
+                    <option value="Phú Yên">Phú Yên
+                    <option value="Tp.Cần Thơ">Tp.Cần Thơ
+                    <option value="Tp.Đà Nẵng">Tp.Đà Nẵng
+                    <option value="Tp.Hải Phòng">Tp.Hải Phòng
+                    <option value="Tp.Hà Nội">Tp.Hà Nội
+                    <option value="TP  HCM">TP HCM
+                </select>
+                <br>
+                <span id="loi_tinh"></span>
+            </div>
+
+            <button type="submit" onclick="matchu()">Thanh toán</button>
+
+        </form>
+    </div>
+</body>
+
+</html>

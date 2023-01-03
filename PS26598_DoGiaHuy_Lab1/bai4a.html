@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đỗ Gia Huy</title>
+    <style>
+      .swapper {
+        margin: auto;
+        text-align: center;
+        /* border: 1px solid; */
+        max-width: 500px;
+        /* border-radius: 20px; */
+      }
+      .swapper h3 {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        margin: 0;
+        padding: 20px;
+        background-color: palevioletred;
+        color: aqua;
+      }
+      .swapper .content {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        padding: 5px;
+        margin: 0;
+        background-color: grey;
+      }
+      .swapper .content h4 {
+        font-size: 20px;
+
+        color: orange;
+      }
+      .swapper .content span {
+        font-size: 30px;
+        color: pink;
+      }
+      .swapper .content p {
+        color: aqua;
+        font-size: 18px;
+      }
+    </style>
+    <script>
+      var slx = localStorage.getItem("soLanXem");
+      if (slx == null) slx = 0;
+      slx++;
+      localStorage.setItem("soLanXem", slx);
+    </script>
+  </head>
+  <body>
+    <div class="swapper">
+      <h3>LƯU BIẾN VÀO LOCALSTORAGE</h3>
+
+      <div class="content">
+        <h4>
+          Bạn đã xem trang này:
+          <span
+            ><script>
+              document.write(slx);
+            </script></span
+          >
+          lần
+        </h4>
+        <p>Gõ phím F5 nạp lại trang để xem kết quả</p>
+      </div>
+    </div>
+  </body>
+</html>

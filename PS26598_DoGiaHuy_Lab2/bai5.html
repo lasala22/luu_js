@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đỗ Gia Huy - PS26598</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin: auto;
+            max-width: 500px;
+            border: 1px solid navy;
+            border-radius: 10px;
+        }
+
+        h3 {
+            text-align: center;
+            color: rgb(12, 161, 161);
+        }
+
+        .content {
+            color: purple;
+            padding-left: 30px;
+        }
+    </style>
+    <script>
+        const PI = 3.14;
+        do {
+            var bankinh = parseFloat(prompt("Nhập bán kính:"));
+            if(isNaN(bankinh) == true){
+                alert("Nhập sai, nhập lại!");
+
+            }else{
+                break;
+            }
+        } while (true);
+        var dientich = PI * Math.pow(bankinh,2);
+        var chuvi = 2*PI*bankinh;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h3>Chu vi và diện tích hình tròn</h3>
+        <div class="content">
+            <script>
+                document.write("<p>Bán kính: "+bankinh+"</p>");
+                document.write("<p>Chu vi: "+chuvi.toFixed(2)+"</p>");
+                document.write("<p>Diện tích: "+dientich.toFixed(2)+"</p>");
+            </script>
+        </div>
+    </div>
+</body>
+</html>

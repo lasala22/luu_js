@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đỗ Gia Huy - PS26598</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    .container{
+        margin: auto;
+        max-width: 500px;
+    }
+    h4{
+        font-size: 20px;
+        text-align: center;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        margin: 0;
+        padding: 10px;
+        background-color:yellowgreen;
+        color: navy;
+    }
+    .content {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        
+        padding:10px 20px;
+        margin: 0;
+        background-color: pink;
+      }
+    p{
+        color: red;
+    }
+</style>
+
+<script>
+    function tinhtuoi(ns){
+        var td = new Date();
+        var n = td.getFullYear();
+        return n - ns;
+    }
+</script>
+<body>
+    <div class="container">
+        <h4>THÔNG TIN SINH VIÊN</h4>
+        <div class="content">
+            <p><span>Họ và tên :</span> <span id="ht"></span></p>
+            <p><span>Năm sinh :</span> <span id="ns"></span></p>
+            <p><span>Tuổi :</span> <span id="t"></span></p>
+        </div>
+        
+    </div>
+</body>
+</html>
+<script>
+    do {
+        var ht = prompt("Bạn tên gì?");
+        if(ht == null || isNaN(ht) == false){
+            ht = "Đỗ Gia Huy";
+            break;
+        }else{
+            break;
+        }
+    } while (true);
+    
+    do {
+        var ns = prompt("Bạn sinh năm nào? ");
+        if(isNaN(ns) == true || ns>=2023){
+            alert("Vui lòng nhập lại")
+        }else{
+            break;
+        }
+    } while (true);
+    var t = tinhtuoi(ns);
+    document.getElementById("ht").innerHTML = ht;
+    document.getElementById("ns").innerHTML = ns;
+    document.getElementById("t").innerHTML = t;
+    
+</script>

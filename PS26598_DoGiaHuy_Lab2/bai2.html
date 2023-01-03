@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đỗ Gia Huy - PS26598</title>
+</head>
+<style>
+    .container {
+        width: 1140px;
+        margin: auto;
+        border: 1px solid darkgrey
+    }
+
+    header {
+        background: darkolivegreen;
+        height: 120px;
+        position: relative;
+    }
+
+    main {
+        background: darkseagreen;
+        min-height: 400px;
+    }
+
+    footer {
+        background: darkslategray;
+        height: 100px;
+    }
+
+    #chao {
+        color: deeppink;
+        font-weight: bold;
+        font-style: italic;
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+    }
+    main{
+        padding: 20px;
+    }
+    main h3{
+        text-align: center;
+        color: orangered;
+    }
+    main p {
+        padding: 10px;
+        color: rgb(240, 33, 102);
+    }
+    li{
+        font-size: 18px;
+        padding: 10px 0;
+        color: purple;
+    }
+    a{
+        display: inline-block;
+        padding: 5px 0;
+        color: red;
+        text-decoration: none;
+    }
+    footer{
+        text-align: center;
+        padding: 30px;
+    }
+    footer p{
+        padding: 10px;
+    }
+    footer p span{
+        color: cyan;
+    }
+    footer p b{
+        color: pink;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div id="chao">
+            <script>
+                var n = new Date();
+                var gio = n.getHours();
+                if(gio<12){
+                    document.write("Chào buổi sáng");
+                }else{
+                    document.write("Chào buổi chiều");
+                }
+            </script>
+        </div>
+    </header>
+    <main>
+        <h3>JAVASCRIPT CÓ THỂ LÀM GÌ? </h3>
+        <p>
+            JavaScript được tạo ra với mục đích xử lý các tác vụ phía Client như
+            <ol>
+                <li>Tạo menu xổ xuống. Các item menu khi đưa chuột vào sẽ xổ xuống các mục con của nó.</li>
+                <li>Thay đổi nội dung trang web. Ví dụ: hiện kết quả khen/chê tùy user trả lời câu hỏi đúng dau, hiện lời chào tùy thời gian buổi sáng hay chiều…</li>
+                <li>Thêm các thành phần động vào trang web như slide show, carousel.</li>
+                <li>Tạo các hiệu ứng cho hình ảnh, text…trong trang. Ví dụ các hiệu ứng ẩn hiện hình, đổi hình khi đưa chuột vào.</li>
+                <li>JavaScript có thể dùng viết game
+                    <br>
+                    <a href="https://thesudoku.com/" target="_blank">https://thesudoku.com/</a>
+                    <br>
+                    <a href="https://www.w3schools.com/graphics/game_intro.asp" target="_blank">https://www.w3schools.com/graphics/game_intro.asp</a>
+                </li>
+                <li>Kiểm tra tình hợp lệ cửa dữ liệu người dùng (trong form). Ví dụ form đăng ký của facebook</li>
+            </ol>
+        </p>
+    </main>
+    <footer>
+        <p><span>Họ tên: </span><b>Đỗ Gia Huy</b></p>
+        <p><span>Email: </span><b>huydgps26598@fpt.edu.vn</b></p>
+    </footer>
+</div>
+</body>
+
+</html>

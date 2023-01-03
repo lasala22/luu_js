@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đỗ Gia Huy - PS26598</title>
+</head>
+<style>
+    .container {
+        width: 1140px;
+        margin: auto;
+        border: 1px solid darkgrey
+    }
+
+    header {
+        background: darkolivegreen;
+        height: 120px;
+        position: relative;
+    }
+    header #dongho{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 30px;
+        color: cyan;
+    }
+
+    main {
+        background: darkseagreen;
+        min-height: 400px;
+        padding-top: 30px;
+        text-align: center;
+    }
+
+    footer {
+        background: darkslategray;
+        height: 100px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <header>
+            <span id="dongho" onclick="starstopDH()">Đồng hồ</span>
+        </header>
+        <main>
+            <button onclick="naplai()">Nạp lại</button>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+
+</html>
+<script>
+    var dh = null;
+    function tg() {
+        var now = new Date();
+        var h = now.getHours();
+        var m = now.getMinutes();
+        var s = now.getSeconds();
+        document.getElementById('dongho').innerHTML = h + ":" + m + ":" + s;
+    }
+    dh = setInterval("tg()", 1000);
+
+    loichao = setTimeout("chao()",5000);
+    function chao(){
+        alert("Tôi là Đỗ Gia Huy. Chào Bạn! Chúc an lành")
+    }
+
+    function naplai(){
+        location.reload();
+    }
+    function starstopDH(){
+        if(dh == null){
+            dh = setInterval('tg()',1000);
+        }else{
+            clearInterval(dh);
+            dh = null;
+        }
+    }
+</script>

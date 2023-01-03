@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .swapper {
+    margin: auto;
+    text-align: center;
+    border: 1px solid;
+    max-width: 500px;
+    border-radius: 20px;
+  }
+  p{
+    color: red;
+  }
+</style>
+</head>
+<body>
+    <div class="swapper">
+        <script>
+    
+            var a =parseFloat(prompt("Hãy nhập vào chiều rộng: "));  //rộng
+            var b =parseFloat(prompt("Hãy nhập vào chiều dài: ")) ; //dài
+            
+            var x;
+            var y;
+            console.log(a);
+            console.log(b);
+        
+            x = (a+b)*2;
+            y = a*b;
+            console.log(x);
+            console.log(y);
+            document.write("<p>Chu vi = " + x +"</p>")
+            document.write("<p>Diện tích là = " + y +"</p>")
+        </script>
+    </div>
+
+</body>
+</html>

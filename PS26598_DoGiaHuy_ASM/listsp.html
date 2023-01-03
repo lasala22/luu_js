@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đỗ Gia Huy - PS26598</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #sanphammoi {
+            width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 32.5% 32.5% 33%;
+            grid-template-rows: 400px;
+            grid-column-gap: 1%;
+            grid-row-gap: 10px;
+        }
+
+        #sanphammoi .sp {
+            border: 1px solid navy;
+            text-align: center;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        #sanphammoi .hinhsp {
+            height: 300px;
+            max-width: 100%;
+        }
+
+        #sanphammoi .icons {
+            position: absolute;
+            top: 140px;
+            left: 120px;
+            background-color: lightblue;
+            display: none;
+        }
+
+        #sanphammoi .gia {
+            font-size: 1.3em;
+            padding: 10px 0px;
+        }
+
+        #sanphammoi .tensp {
+            padding: 0px 25px;
+            height: 40px;
+        }
+
+        header{
+            width: 1000px;
+            height: 120px;
+            margin: auto;
+            background-color: aqua;
+            position: relative;
+        }
+        header #soluong{
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: rebeccapurple;
+        }
+    </style>
+    <script>
+        var listsp = [
+            { 'tensp': 'MSI GeForce RTX 4090 GAMING TRIO 24G', 'gia': 49990000, 'hinh': 'images/card1a.webp' },
+            { 'tensp': 'ASUS TUF Gaming GeForce RTX 4090', 'gia': 49990000, 'hinh': 'images/card2a.webp' },
+            { 'tensp': 'GIGABYTE AORUS GeForce RTX 4090 XTREME WATERFORCE 24G', 'gia': 58990000, 'hinh': 'images/card10a.webp' },
+            { 'tensp': 'GIGABYTE GeForce RTX 4090 WINDFORCE 24G', 'gia': 50990000, 'hinh': 'images/card4a.webp' },
+            { 'tensp': 'MSI GeForce RTX 4090 SUPRIM X 24G', 'gia': 54990000, 'hinh': 'images/card5a.webp' },
+            { 'tensp': 'ASUS TUF Gaming GeForce RTX 4090 OC Edition 24GB GDDR6X', 'gia': 54990000, 'hinh': 'images/card6a.webp' },
+            { 'tensp': 'GIGABYTE GeForce RTX 4090 GAMING OC 24G', 'gia': 54990000, 'hinh': 'images/card7a.webp' },
+            { 'tensp': 'MSI GeForce RTX 4090 SUPRIM LIQUID 24G', 'gia': 56990000, 'hinh': 'images/card8a.webp' },
+            { 'tensp': 'ASUS ROG Strix GeForce RTX 4090 24GB GDDR6X ', 'gia': 57990000, 'hinh': 'images/card9a.webp' },
+        ]
+    </script>
+</head>
+
+<body>
+    <header>
+        <b id="soluong"></b>
+    </header>
+    <section id="sanphammoi">
+        
+        <script>
+            for(i=0;i<listsp.length;i++){
+
+                var sp = listsp[i];
+                var tensp = sp.tensp;
+                
+                var gia = sp.gia;
+                var hinh = sp.hinh;
+                document.write(`<div class="sp" onmouseover="hienicon(this)" onmouseout="anicon(this)">
+                    <img src="${hinh}" alt="" class="hinhsp">
+                    <div class="info">
+                        <p class="gia">${gia}</p>
+                        <h4 class="tensp">${tensp}</h4>
+                    </div>
+                    <div class="icons" id="icons">
+                        <img src="images/add-1-icon.png" alt="" onclick="xemchitiet(${i})">
+                        <img src="images/shopping-cart-icon.png" alt="" onclick="chonsp('${i}',  '${tensp}')">
+                        <img src="images/like1.png" alt="" onclick="thich()">
+                    </div>
+                </div>`)
+            }
+            
+        </script>
+
+        <!-- <div class="sp">
+            <img src="images/card2a.webp" alt="" class="hinhsp">
+            <div class="info">
+                <p class="gia">49,990,000₫</p>
+                <h4 class="tensp">ASUS TUF Gaming GeForce RTX 4090 24GB GDDR6X</h4>
+            </div>
+            <div class="icons" id="icons">
+                <img src="images/add-1-icon.png" alt="">
+                <img src="images/shopping-cart-icon.png" alt="">
+                <img src="images/like1.png" alt="">
+            </div>
+        </div>
+        <div class="sp">
+            <img src="images/card10a.webp" alt="" class="hinhsp">
+            <div class="info">
+                <p class="gia">58,990,000₫</p>
+                <h4 class="tensp">GIGABYTE AORUS GeForce RTX 4090 XTREME WATERFORCE 24G</h4>
+            </div>
+            <div class="icons" id="icons">
+                <img src="images/add-1-icon.png" alt="">
+                <img src="images/shopping-cart-icon.png" alt="">
+                <img src="images/like1.png" alt="">
+            </div>
+        </div>
+        <div class="sp">
+            <img src="images/card4a.webp" alt="" class="hinhsp">
+            <div class="info">
+                <p class="gia">50,990,000₫</p>
+                <h4 class="tensp">GIGABYTE GeForce RTX 4090 WINDFORCE 24G</h4>
+            </div>
+            <div class="icons" id="icons">
+                <img src="images/add-1-icon.png" alt="">
+                <img src="images/shopping-cart-icon.png" alt="">
+                <img src="images/like1.png" alt="">
+            </div>
+        </div>
+        <div class="sp">
+            <img src="images/card5a.webp" alt="" class="hinhsp">
+            <div class="info">
+                <p class="gia">54,990,000₫</p>
+                <h4 class="tensp">MSI GeForce RTX 4090 SUPRIM X 24G</h4>
+            </div>
+            <div class="icons" id="icons">
+                <img src="images/add-1-icon.png" alt="">
+                <img src="images/shopping-cart-icon.png" alt="">
+                <img src="images/like1.png" alt="">
+            </div>
+        </div>
+        <div class="sp">
+            <img src="images/card6a.webp" alt="" class="hinhsp">
+            <div class="info">
+                <p class="gia">54,990,000₫</p>
+                <h4 class="tensp">ASUS TUF Gaming GeForce RTX 4090 OC Edition 24GB GDDR6X</h4>
+            </div>
+            <div class="icons" id="icons">
+                <img src="images/add-1-icon.png" alt="">
+                <img src="images/shopping-cart-icon.png" alt="">
+                <img src="images/like1.png" alt="">
+            </div>
+        </div>
+        <div class="sp">
+            <img src="images/card7a.webp" alt="" class="hinhsp">
+            <div class="info">
+                <p class="gia">54,990,000₫</p>
+                <h4 class="tensp">GIGABYTE GeForce RTX 4090 GAMING OC 24G</h4>
+            </div>
+            <div class="icons" id="icons">
+                <img src="images/add-1-icon.png" alt="">
+                <img src="images/shopping-cart-icon.png" alt="">
+                <img src="images/like1.png" alt="">
+            </div>
+        </div>
+        <div class="sp">
+            <img src="images/card8a.webp" alt="" class="hinhsp">
+            <div class="info">
+                <p class="gia">56,990,000₫</p>
+                <h4 class="tensp">MSI GeForce RTX 4090 SUPRIM LIQUID 24G</h4>
+            </div>
+            <div class="icons" id="icons">
+                <img src="images/add-1-icon.png" alt="">
+                <img src="images/shopping-cart-icon.png" alt="">
+                <img src="images/like1.png" alt="">
+            </div>
+        </div>
+        <div class="sp">
+            <img src="images/card4a.webp" alt="" class="hinhsp">
+            <div class="info">
+                <p class="gia">57,990,000₫</p>
+                <h4 class="tensp">ASUS ROG Strix GeForce RTX 4090 24GB GDDR6X</h4>
+            </div>
+            <div class="icons" id="icons">
+                <img src="images/add-1-icon.png" alt="">
+                <img src="images/shopping-cart-icon.png" alt="">
+                <img src="images/like1.png" alt="">
+            </div>
+        </div> -->
+
+    </section>
+</body>
+</html>
+<script>
+    function hienicon(obj){
+        obj.querySelector("#icons").style.display="block"
+    }
+    function anicon(obj){
+        obj.querySelector("#icons").style.display="none"
+    }
+    function thich(){
+        obj = event.target;
+        if(obj.src.endsWith('like2.png')==true){
+            obj.src="images/like1.png"
+        }else{
+            obj.src="images/like2.png"
+        };
+    }
+    var soluong = 0;
+    function chonsp(id,tensp){
+        soluong++;
+        alert("Bạn đã chọn sản phẩm thứ "+ id + " Tên sản phẩm là "+tensp);
+        document.getElementById("soluong").innerHTML="Số lượng = "+ soluong;
+    }
+    function xemchitiet(i){
+        alert("Sản phẩm được click là" + (i+1));
+        document.location="detail.html?id=" + i;
+    }
+</script>

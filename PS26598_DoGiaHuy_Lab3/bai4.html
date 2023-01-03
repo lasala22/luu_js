@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đỗ Gia Huy - PS26598</title>
+    <style>
+        .container {
+            width: 700px;
+            margin: auto;
+        }
+
+        .container form{
+            text-align: center;
+            background-color: aquamarine;
+            display: grid;
+            grid-template-columns: 32.5% 32.5% 33%;
+            grid-column-gap: 2%;
+            padding: 40px;
+            border: 5px dotted navy;
+        }
+        .container form p{
+            font-size: 18px;
+            color: rgb(23, 92, 221);
+        }
+        .container form select{
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="">
+            <div class="ngay">
+                <p>Ngày</p>
+                <select name="" id="">
+                    <script>
+                        for (let i = 1; i <= 31; i++) {
+                            document.write(`<option value="i">${i}</option>`)
+                        }
+                    </script>
+                </select>
+            </div>
+
+            <div class="thang">
+                <p>Tháng</p>
+                <select name="" id="">
+                    <script>
+                        var i = 1;
+                        while (true) {
+                            document.write(`<option value="i">${i}</option>`);
+                            i++;
+                            if (i > 12) {
+                                break;
+                            }
+                        }
+                    </script>
+                </select>
+            </div>
+
+            <div class="nam">
+                <p>Năm</p>
+                <select name="" id="">
+                    <script>
+                        var i = 1970;
+                        do {
+                            document.write(`<option value="i">${i}</option>`);
+                            i++;
+                            if (i > 2022) {
+                                break;
+                            }
+                        } while (true);
+                    </script>
+                </select>
+            </div>
+
+        </form>
+
+    </div>
+</body>
+
+</html>

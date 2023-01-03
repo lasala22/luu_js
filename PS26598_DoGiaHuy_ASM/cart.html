@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đỗ Gia Huy - PS26598</title>
+</head>
+<style>
+    #nut {
+        text-align: center;
+    }
+
+    #nut button {
+        width: 120px;
+        height: 30px;
+        background-color: darkcyan;
+        color: whitesmoke;
+    }
+
+    #giohang {
+        width: 700px;
+        margin: auto;
+    }
+
+    #tongtiengiohang {
+        text-align: center;
+        font-size: 1.2em;
+        color: darkgreen;
+    }
+
+    #giohang .rows {
+        display: grid;
+        grid-template-columns: 50px 350px 100px 100px 90px;
+        background-color: aquamarine;
+    }
+
+    #giohang .rows * {
+        border: 1px solid navy;
+        padding: 10px;
+        text-align: center;
+    }
+
+    #giohang .rows input {
+        width: 60px;
+        text-align: center;
+    }
+</style>
+<script>
+    function taoCart() {
+        var cart = [
+            { 'tensp': 'MSI GeForce RTX 4090 GAMING TRIO 24G', 'gia': 49990000, 'hinh': 'images/card1a.webp', 'soluong': 1 },
+            { 'tensp': 'ASUS TUF Gaming GeForce RTX 4090', 'gia': 49990000, 'hinh': 'images/card2a.webp', 'soluong': 4 },
+            { 'tensp': 'GIGABYTE AORUS GeForce RTX 4090 XTREME WATERFORCE 24G', 'gia': 58990000, 'hinh': 'images/card10a.webp', 'soluong': 5 },
+            { 'tensp': 'GIGABYTE GeForce RTX 4090 WINDFORCE 24G', 'gia': 50990000, 'hinh': 'images/card4a.webp', 'soluong': 3 },
+            { 'tensp': 'MSI GeForce RTX 4090 SUPRIM X 24G', 'gia': 54990000, 'hinh': 'images/card5a.webp', 'soluong': 2 },
+            { 'tensp': 'ASUS TUF Gaming GeForce RTX 4090 OC Edition 24GB GDDR6X', 'gia': 54990000, 'hinh': 'images/card6a.webp', 'soluong': 6 },
+            { 'tensp': 'GIGABYTE GeForce RTX 4090 GAMING OC 24G', 'gia': 54990000, 'hinh': 'images/card7a.webp', 'soluong': 4 },
+            { 'tensp': 'MSI GeForce RTX 4090 SUPRIM LIQUID 24G', 'gia': 56990000, 'hinh': 'images/card8a.webp', 'soluong': 3 },
+            { 'tensp': 'ASUS ROG Strix GeForce RTX 4090 24GB GDDR6X ', 'gia': 57990000, 'hinh': 'images/card9a.webp', 'soluong': 1 }
+        ];
+        sessionStorage.setItem("cart", JSON.stringify(cart));
+        alert('Đã tạo cart xong trong sessionStorage')
+    }
+
+    function hienCart() {
+        var str = `
+            <div class="rows">
+                <div>TT</div>
+                <div>Tên SP</div>
+                <div>Giá</div>
+                <div>Số lượng</div>
+                <span>Tiền</div>
+            </div>
+        `;
+        var text = sessionStorage.getItem("cart");
+        var cart = JSON.parse(text);
+        for (i = 0; i < cart.length; i++) {
+            sp = cart[i];
+            str += `
+            <div class="rows">
+                <div>${i + 1}</div>
+                <div>${sp.tensp}</div>
+                <div>${sp.gia}</div>
+                <div><input onchange="doisoluong()" onkeyup="doisoluong()" type='number' value='${sp.soluong}'></div>
+                <span>${sp.gia * sp.soluong}</div>
+            </div>
+        `
+        }
+        document.getElementById("giohang").innerHTML = str;
+    }
+
+    function doisoluong() {
+        var soluong = event.target.value;
+        var gia = event.target.parentElement.previousElementSibling.innerText;
+        var tien = soluong * gia;
+        event.target.parentElement.nextElementSibling.innerText = tien;
+        tongtiengiohang();
+    }
+    function tongtiengiohang() {
+        var arr = document.getElementsByClassName("rows");
+        var tongtienGH = 0;
+        for (i = 1; i < arr.length; i++) {
+            let row = arr[i];
+            tien = row.getElementsByTagName("span")[0].innerText;
+            tien = parseFloat(tien);
+            tongtienGH += tien;
+
+        }
+        document.getElementById("tongtiengiohang").innerText = "Tổng tiền giỏ hàng = " + tongtienGH;
+
+    }
+    function xoaCart() {
+        sessionStorage.removeItem("cart");
+        document.getElementById("giohang").innerHTML = "";
+        document.getElementById("tongtiengiohang").innerHTML = "";
+    }
+</script>
+
+<body>
+    <div id="nut">
+        <button onclick="taoCart()">Tạo Cart</button>
+        <button onclick="hienCart()">Hiện Cart</button>
+        <button onclick="xoaCart()">Xóa Cart</button>
+    </div>
+    <hr />
+    <div id="giohang">Giỏ hàng</div>
+    <div id="tongtiengiohang">Tổng tiền giỏ hàng</div>
+</body>
+
+</html>

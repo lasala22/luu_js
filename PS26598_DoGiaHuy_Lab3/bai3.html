@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đỗ Gia Huy-PS26598</title>
+    <style>
+        .container {
+            margin: auto;
+            text-align: center;
+
+        }
+        .info{
+            text-align: center;
+        }
+        .info h2{
+            color: red;
+        }
+        .info h4{
+            color: blueviolet;
+            font-size: larger;
+        }
+        .container td button {
+            width: 80px;
+            height: 90px;
+            font-weight: bolder;
+            font-size: 20px;
+        }
+        .container td p{
+            margin: 0;
+            width: 80px;
+            height: 40px;
+            padding-top: 25%;
+            
+            font-weight: bolder;
+            font-size: 20px;
+            text-align: center;
+            background-color: navy;
+            color: aqua;
+        }
+    </style>
+    <script>
+        var so1 = null;
+        var so2 = null;
+        var pheptinh = null;
+        var kq = null;
+
+        function ganso(x) {
+            if (so1 == null) {
+                so1 = x;
+            } else {
+                so2 = x;
+            }
+            document.getElementById("so1").innerHTML=so1;
+            document.getElementById("so2").innerHTML=so2;
+            // console.log(so1);
+            // console.log(so2);
+        }
+        function ganpheptinh(x) {
+            pheptinh = x;
+            document.getElementById("pt").innerHTML=pheptinh;
+
+
+        }
+        function thuchien() {
+            if (pheptinh == '+') {
+                kq = so1 + so2;
+            }
+            if (pheptinh == '-') {
+                kq = so1 - so2;
+            }
+            if (pheptinh == 'x') {
+                kq = so1 * so2;
+            }
+            if (pheptinh == ':') {
+                kq = so1 / so2;
+            }
+            document.getElementById("kq").innerHTML=kq;
+
+        }
+        function lamlai() {
+            so1 = null;
+            so2 = null;
+            pheptinh = null;
+            kq = null;
+            document.getElementById("so1").innerHTML="";
+            document.getElementById("so2").innerHTML="";
+            document.getElementById("pt").innerHTML="";
+            document.getElementById("kq").innerHTML="";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="info">
+        <h2>MÁY TÍNH JAVASCRIPT</h2>
+        <h4>Tác giả: Đỗ Gia Huy</h4>
+    </div>
+    <table class="container">
+        
+        <tr>
+            <td><button onclick="ganso(7)">7</button></td>
+            <td><button onclick="ganso(8)">8</button></td>
+            <td><button onclick="ganso(9)">9</button></td>
+            <td><button onclick="ganpheptinh('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="ganso(4)">4</button></td>
+            <td><button onclick="ganso(5)">5</button></td>
+            <td><button onclick="ganso(6)">6</button></td>
+            <td><button onclick="ganpheptinh('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="ganso(1)">1</button></td>
+            <td><button onclick="ganso(2)">2</button></td>
+            <td><button onclick="ganso(3)">3</button></td>
+            <td><button onclick="ganpheptinh('x')">x</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="ganso(7)">0</button></td>
+            <td><button onclick="lamlai()">C</button></td>
+            <td><button onclick="thuchien()">=</button></td>
+            <td><button onclick="ganpheptinh(':')">:</button></td>
+        </tr>
+        <tr>
+            <td><p id="so1"></p></td>
+            <td><p id="pt"></p></td>
+            <td><p id="so2"></p></td>
+            <td><p id="kq"></p></td>
+        </tr>
+    </table>
+</body>
+
+</html>

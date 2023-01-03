@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: auto;
+    max-width: 400px;
+    border: 1px solid orangered;
+}
+
+h2 {
+    text-align: center;
+    color: greenyellow;
+    background-color: palevioletred;
+    margin: 0;
+    padding: 10px;
+}
+
+p {
+
+    padding-left: 20px;
+}
+
+p span {
+    display: inline-block;
+    width: 100px;
+}
+
+b {
+    padding-left: 10px;
+    display: inline-block;
+    width: 200px;
+
+    color: red;
+
+}

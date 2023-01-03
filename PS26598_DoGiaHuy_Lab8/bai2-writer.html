@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đỗ Gia Huy - PS26598</title>
+</head>
+<style>
+    body{
+        background: url(img/pexels-neosiam-676578.jpg);
+        background-size: cover;
+        
+    }
+    .container{
+        width: 500px;
+        margin: auto;
+        font-weight: bold;
+        font-size: 18px;
+    }
+</style>
+<body>
+    <div class="container">
+        <h2 id="tenbh">Nắng Thủy Tinh</h2>
+        <button onclick="batdau()">Bắt đầu</button>
+        <div id="noidung"></div>
+    </div>
+</body>
+</html>
+<script>
+    var i=0;
+    var baihat = `Màu nắng hay là màu mắt em<br>
+            Mùa thu mưa bay cho tay mềm <br>
+            Chiều nghiêng nghiêng bóng nắng qua thềm<br>
+            Rồi có hôm nào mây bay lên.<br>
+            Lùa nắng cho buồn vào tóc em<br>
+            Bàn tay xanh xao đón ưu phiền<br>
+            Ngày xưa sao lá thu không vàng<br>
+            Và nắng chưa vào trong mắt em<br>
+            Em qua công viên bước chân âm thầm<br>
+            Ngoài kia gió mây về ngàn<br>
+            Cỏ cây chợt lên màu nắng<br>
+            Em qua công viên mắt em ngây tròn<br>
+            Lung linh nắng thủy tinh vàng<br>
+            Chợt hồn buồn dâng mênh mang<br>
+            Chiều đã đi vào vườn mắt em<br>
+            Mùa thu qua tay đã bao lần<br>
+            Ngàn cây thắp nến lên hai hàng<br>
+            Để nắng đi vào trong mắt em<br>
+            Màu nắng bây giờ trong mắt em .<br>
+            Em qua công viên bước chân âm thầm<br>
+            Ngoài kia gió mây về ngàn<br>
+            Cỏ cây chợt lên màu nắng<br>
+            Em qua công viên mắt em ngây tròn<br>
+            Lung linh nắng thủy tinh vàng<br>
+            Chợt hồn buồn dâng mênh mang<br>
+            Chiều đã đi vào vườn mắt em<br>
+            Mùa thu qua tay đã bao lần<br>
+            Ngàn cây thắp nến lên hai hàng<br>
+            Để nắng đi vào trong mắt em<br>
+            Màu nắng bây giờ trong mắt em.`;
+    
+    var chay=null;
+    function batdau(){
+        var tocdo = parseFloat(prompt("Nhập vào tốc độ hiển thị lời bài hát"));
+        chay = setInterval(chaychu, tocdo);
+    }
+    function chaychu(){
+        if(i<baihat.length){
+            document.getElementById("noidung").innerHTML = baihat.substr(0, i);
+            i++;
+        }
+    }
+</script>

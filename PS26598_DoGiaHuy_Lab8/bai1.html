@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đỗ Gia Huy - PS26598</title>
+    
+</head>
+
+<body>
+    <div class="container">
+        <h2>Dry Flower - Yuuri</h2>
+        <audio src="audio/Dry Flower - Yuuri.mp3" id="nhac" controls="true"></audio>
+        <div id="volume"></div>
+        <hr>
+        <button onclick="play()">Play</button>
+        <button onclick="pause()">Pause</button>
+        <button onclick="vol1()">Vol+</button>
+        <button onclick="vol2()">Vol-</button>
+        <button onclick="mute()">Mute</button>
+        <hr><input type="file" onchange="chonfile()" >
+    </div>
+</body>
+
+</html>
+<script>
+    var audio = document.getElementById('nhac');
+    var vol = document.getElementById('volume');
+    audio.addEventListener('ended', function () {
+        vol.innerText = '';
+    });
+    function play() {
+        audio.play();
+        vol.innerText = 'Số giây: ' + audio.duration;
+    }
+    function pause() { audio.pause() }
+    function mute() { audio.muted = !audio.muted }
+    function vol1() {
+        if (audio.volume >= 1) return;
+        audio.volume = (audio.volume + 0.1).toFixed(1);
+        vol.innerText = 'Volume=' + audio.volume;
+    }
+    function vol2() {
+        if (audio.volume <= 0) return;
+        audio.volume = (audio.volume - 0.1).toFixed(1);
+        vol.innerText = 'Volume=' + audio.volume;
+    }
+    function chonfile(){
+        var file = event.target.files[0];
+        // console.log(file);
+        fileURL = window.URL.createObjectURL(file);
+        document.getElementById('nhac').src = fileURL;
+        document.getElementsByTagName("h2")[0].innerText=file.name;
+    }
+</script>
